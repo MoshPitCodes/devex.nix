@@ -70,6 +70,11 @@
             description = "Kickstart NixOS minimal environment flake.";
             path = ./template/nixos-minimal;
           };
+          
+          nixos-wsl = {
+            description = "Kickstart NixOS WSL environment flake.";
+            path = ./template/nixos-wsl;
+          };
 
           nodejs-backend = {
             description = "Kickstart Node.js backend package flake.";
@@ -167,8 +172,8 @@
           example-nestjs = mkLanguage {name = "nestjs";};
           example-nixos-desktop-gnome = mkNixosDesktop {desktop = "gnome";};
           example-nixos-desktop-plasma5 = mkNixosDesktop {desktop = "plasma5";};
-          example-nixos-wsl = mkNixosWSL {};
           example-nixos-minimal = mkNixosMinimal {};
+          example-nixos-wsl = mkNixosWSL {};
           example-nodejs-backend = mkLanguage {name = "nodejs-backend";};
           example-ocaml = mkLanguage {name = "ocaml";};
           example-php = mkLanguage {name = "php";};
