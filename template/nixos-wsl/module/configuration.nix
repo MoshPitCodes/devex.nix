@@ -1,10 +1,8 @@
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
-
+    # WSL doesn't need boot loader configuration
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.efi.canTouchEfiVariables = false;
+  
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {

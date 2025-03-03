@@ -24,10 +24,6 @@ in
           neovim
         ];
 
-        # WSL doesn't need boot loader configuration
-        boot.loader.systemd-boot.enable = false;
-        boot.loader.efi.canTouchEfiVariables = false;
-
         users.users."${username}" = {
           extraGroups = ["wheel"];
           home = "/home/${username}";
