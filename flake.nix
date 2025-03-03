@@ -147,7 +147,7 @@
       in {
         devShells = {
           default = mkShell {
-            buildInputs = [just jq];
+            buildInputs = [just jq git];
           };
         };
 
