@@ -154,6 +154,7 @@
           mkLanguage = callPackage lib.flake.mkLanguage;
           mkNixosDesktop = callPackage lib.flake.mkNixosDesktop;
           mkNixosMinimal = callPackage lib.flake.mkNixosMinimal;
+          mkNixosWSL = callPackage lib.flake.mkNixosWSL;
         in {
           example-bash = mkLanguage {name = "bash";};
           example-cpp-cmake = mkLanguage {name = "cpp-cmake";};

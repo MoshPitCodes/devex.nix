@@ -108,5 +108,26 @@
         cat $out/flake.nix
         cat $out/system/nixos.nix
       '';
+
+    mkNixosWSL = {
+      callPackage,
+      runCommand,
+    }:
+      runCommand "nixos-wsl"
+      {
+        hardware_configuration = callPackage mkNixosHardware {};
+        src = ../template/nixos-wsl;
+      } ''
+        mkdir -p $out
+        cp --no-preserve=mode -r $src/* $out
+        cp --no-preserve=mode $hardware_configuration $out/system/hardware-configuration.nix
+        sed -i -e "s/<enter username in flake.nix>/username/g" $out/flake.nix
+        sed -i -e "s/<enter password in flake.nix>/password/g" $out/flake.nix
+        sed -i -e "s/throw //g" $out/flake.nix
+        sed -i -e "s/ # TODO.*$//g" $out/flake.nix
+        sed -i -e "s/\/etc\/nixos\/hardware-configuration.nix/\.\/hardware-configuration.nix/g" $out/system/nixos.nix
+        cat $out/flake.nix
+        cat $out/system/nixos.nix
+      '';
   };
 }

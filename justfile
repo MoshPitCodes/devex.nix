@@ -52,3 +52,10 @@ build-nixos-minimal system="x86_64" temp_dir="$(mktemp -d)":
     TEMP_DIR=$(just build-template "nixos-minimal" "{{ temp_dir }}")
     ls -alh $TEMP_DIR
     just build "$TEMP_DIR#nixosConfigurations.{{ system }}.config.system.build.toplevel"
+
+build-nixos-wsl system="x86_64" temp_dir="$(mktemp -d)":
+    #!/usr/bin/env bash
+    set -euxo pipefail
+    TEMP_DIR=$(just build-template "nixos-wsl" "{{ temp_dir }}")
+    ls -alh $TEMP_DIR
+    just build "$TEMP_DIR#nixosConfigurations.{{ system }}.config.system.build.toplevel"
