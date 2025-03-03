@@ -15,8 +15,8 @@
   }: let
     nixos-system = import ./system/nixos.nix {
       inherit inputs;
-      username = throw "<enter username in flake.nix>"; # TODO: replace with user name and remove throw
-      password = throw "<enter password in flake.nix>"; # TODO: replace with password and remove throw
+      username = "moshpitcodes"; # TODO: replace with user name and remove throw
+      password = "moshpitcodes"; # TODO: replace with password and remove throw
     };
   in {
     nixosConfigurations = {

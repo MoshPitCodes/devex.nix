@@ -18,8 +18,8 @@
   # Git configuration
   programs.git = {
     enable = true;
-    userName = "Example";
-    userEmail = "example@example.com";
+    userName = "moshpitcodes";
+    userEmail = "4273661+MoshPitCodes@users.noreply.github.com";
   };
 
   # Zsh configuration
