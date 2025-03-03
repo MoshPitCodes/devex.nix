@@ -29,7 +29,7 @@ in
         boot.loader.efi.canTouchEfiVariables = false;
 
         users.users."${username}" = {
-          extraGroups = ["networkmanager" "wheel"];
+          extraGroups = ["wheel"];
           home = "/home/${username}";
           isNormalUser = true;
           password = password;
