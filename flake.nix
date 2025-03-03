@@ -167,6 +167,7 @@
           example-nestjs = mkLanguage {name = "nestjs";};
           example-nixos-desktop-gnome = mkNixosDesktop {desktop = "gnome";};
           example-nixos-desktop-plasma5 = mkNixosDesktop {desktop = "plasma5";};
+          example-nixos-wsl = mkNixosWSL {};
           example-nixos-minimal = mkNixosMinimal {};
           example-nodejs-backend = mkLanguage {name = "nodejs-backend";};
           example-ocaml = mkLanguage {name = "ocaml";};
